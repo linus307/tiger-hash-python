@@ -30,7 +30,7 @@ def tiger_compress(string, res):
 	
 	x = []
 	for i in range(8):
-		x.append(struct.unpack('<Q', string[i*8:i*8+8])[0])
+		x.append(int.from_bytes(string[i*8:i*8+8], byteorder='little'))
 		
 	allf = 0xFFFFFFFFFFFFFFFF
 	for i in range(0, 3):
